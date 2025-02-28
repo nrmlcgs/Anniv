@@ -1,22 +1,31 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Balloon Game Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: #fef8f8;
     text-align: center;
-    padding: 50px;
+    padding: 5% 10%; /* Padding adjusted for better mobile spacing */
 }
 
 .game-container {
     max-width: 800px;
     margin: 0 auto;
     background-color: #fff;
-    padding: 30px;
+    padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    width: 100%;
 }
 
 h2 {
     color: #e5004f;
+    font-size: 2.5vw; /* Use viewport width for responsive font size */
 }
 
 .balloon-container {
@@ -27,8 +36,8 @@ h2 {
 }
 
 .balloon {
-    width: 100px;
-    height: 150px;
+    width: 22vw; /* Use percentage width for responsive sizing */
+    height: 30vh;
     background-color: #ff85a1;
     border-radius: 50%;
     margin: 10px;
@@ -38,10 +47,12 @@ h2 {
     transition: all 0.3s ease;
 }
 
+/* Hover effect for balloons */
 .balloon:hover {
     transform: scale(1.1);
 }
 
+/* Pop effect */
 .balloon.pop {
     transform: scale(0.2);
     opacity: 0;
@@ -59,14 +70,14 @@ h2 {
     background-color: #e5004f;
     color: white;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 1.5vw; /* Adjust font size based on screen width */
 }
 
-/* Style for the clickable button with .akosipaga class */
+/* Button Style */
 .akosipaga {
     background: linear-gradient(45deg, #ff85a1, #e5004f); /* Gradient background */
     color: white;
-    font-size: 10px;
+    font-size: 10px; /* Use relative units for font size */
     padding: 15px 30px;
     border: none;
     border-radius: 50px;
@@ -78,10 +89,35 @@ h2 {
 }
 
 .akosipaga:hover {
-    background: linear-gradient(45deg, #e5004f, #ff85a1); /* Reverse the gradient on hover */
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    background: linear-gradient(45deg, #e5004f, #ff85a1);
+    transform: scale(1.05);
 }
 
 .akosipaga:active {
-    transform: scale(0.98); /* Slightly shrink on click */
+    transform: scale(0.98);
+}
+
+/* Responsive design using media queries */
+@media screen and (max-width: 768px) {
+    .game-container {
+        padding: 10px; /* Reduced padding for smaller screens */
+    }
+
+    h2 {
+        font-size: 4vw; /* Adjusted font size for smaller screens */
+    }
+
+    .balloon {
+        width: 30vw;
+        height: 40vh; /* Adjusted size for mobile screens */
+    }
+
+    .akosipaga {
+        font-size: 1.2em; /* Slightly smaller button text */
+        padding: 12px 25px;
+    }
+
+    .message-container {
+        font-size: 2vw; /* Adjust message size */
+    }
 }

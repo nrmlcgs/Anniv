@@ -14,6 +14,7 @@ body {
     align-items: center;
     height: 100vh;
     overflow: hidden;
+    padding: 20px; /* Add padding to avoid touching screen edges */
 }
 
 /* Style for PIN input page */
@@ -21,6 +22,7 @@ body {
     text-align: center;
     color: #333;
     max-width: 400px;
+    width: 100%; /* Ensure it fits in smaller screens */
     margin: 0 auto;
 }
 
@@ -131,14 +133,9 @@ body {
     border: 2px dashed #e5004f;  /* Show a dashed border when hovering over a target piece */
 }
 
-
 .puzzle-piece img {
     width: 100%;
     height: 100%;
-}
-
-.puzzle-piece.dragging {
-    opacity: 0.5;
 }
 
 /* Add styles for the puzzle preview positioned at the top-right */
@@ -212,4 +209,81 @@ button:active {
 #redirectButton[style*="display: none"] {
     display: none;
 }
-    
+
+/* Mobile responsive styles */
+@media (max-width: 768px) {
+    /* Adjust keypad buttons for mobile devices */
+    .keypad {
+        grid-template-columns: repeat(3, 80px);
+        grid-gap: 10px;
+    }
+
+    .key {
+        padding: 15px;
+        font-size: 20px;
+    }
+
+    /* Adjust pin display for mobile */
+    .pin-display {
+        font-size: 28px;
+    }
+
+    /* Adjust puzzle pieces for smaller screens */
+    .puzzle-container {
+        grid-template-columns: repeat(3, 120px);
+    }
+
+    .puzzle-piece {
+        width: 120px;
+        height: 120px;
+    }
+
+    /* Adjust buttons */
+    button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+
+    #redirectButton {
+        padding: 12px 24px;
+        font-size: 18px;
+    }
+}
+
+/* Mobile styles for very small screens (e.g., phones in portrait mode) */
+@media (max-width: 480px) {
+    /* Adjust keypad layout */
+    .keypad {
+        grid-template-columns: repeat(3, 60px);
+        grid-gap: 8px;
+    }
+
+    .key {
+        padding: 10px;
+        font-size: 18px;
+    }
+
+    /* Adjust pin display */
+    .pin-display {
+        font-size: 24px;
+    }
+
+    .puzzle-container {
+        grid-template-columns: repeat(3, 100px);
+    }
+
+    .puzzle-piece {
+        width: 100px;
+        height: 100px;
+    }
+
+    button {
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    #redirectButton {
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+}
