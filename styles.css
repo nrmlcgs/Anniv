@@ -1,0 +1,215 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Background and layout */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #fef8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Style for PIN input page */
+.pin-container {
+    text-align: center;
+    color: #333;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.pin-container h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #e5004f;
+}
+
+.keypad {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 15px;
+    margin-bottom: 20px;
+}
+
+.key {
+    padding: 20px;
+    font-size: 24px;
+    background-color: #ff85a1;
+    border: none;
+    border-radius: 50%;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.key:hover {
+    background-color: #ff3f5f;
+    transform: scale(1.1);
+}
+
+.key:active {
+    background-color: #e5004f;
+}
+
+.clear {
+    background-color: #fce1e1;
+    color: #333;
+}
+
+.clear:hover {
+    background-color: #f6c2c2;
+}
+
+.enter {
+    background-color: #4caf50;
+}
+
+.enter:hover {
+    background-color: #45a049;
+}
+
+/* PIN display */
+.pin-display {
+    font-size: 32px;
+    margin-top: 20px;
+    color: #e5004f;
+    font-weight: bold;
+}
+
+/* Error message */
+.error-message {
+    display: none;
+    color: red;
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+/* Puzzle container */
+.puzzle-container {
+    display: grid;
+    grid-template-columns: repeat(3, 150px);
+    grid-gap: 10px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+/* Style for puzzle pieces */
+.puzzle-piece {
+    width: 150px;
+    height: 150px;
+    background-color: #ddd;
+    border: 2px solid #ccc;
+    cursor: pointer;
+    background-size: cover; /* Ensure the image covers the entire div */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    border-radius: 10px;  /* Optional: rounded corners */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: soft shadow */
+}
+
+/* Add hover effects */
+.puzzle-piece:hover {
+    transform: scale(1.05);  /* Slightly enlarge the piece on hover */
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+/* Add a dragging effect */
+.puzzle-piece.dragging {
+    opacity: 0.5;
+}
+
+/* Add a highlight when hovering over other puzzle pieces */
+.puzzle-piece.over {
+    border: 2px dashed #e5004f;  /* Show a dashed border when hovering over a target piece */
+}
+
+
+.puzzle-piece img {
+    width: 100%;
+    height: 100%;
+}
+
+.puzzle-piece.dragging {
+    opacity: 0.5;
+}
+
+/* Add styles for the puzzle preview positioned at the top-right */
+#puzzlePreview {
+    position: absolute;
+    top: 20px;  /* Adjust distance from the top */
+    right: 20px;  /* Adjust distance from the right */
+    z-index: 10;  /* Ensure it appears above other elements */
+}
+
+#puzzlePreview img {
+    max-width: 200px;  /* Adjust the size of the preview image */
+    height: auto;
+    border: 2px solid #ccc;  /* Optional, adds a border around the image */
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #e5004f;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #c40043;
+}
+
+button:active {
+    background-color: #9b0036;
+}
+
+/* Style for the anniversary message */
+.container {
+    text-align: center;
+    color: #333;
+    display: none; /* Hidden until PIN is correct */
+}
+
+/* Style for the redirect button */
+#redirectButton {
+    padding: 15px 30px;
+    font-size: 20px;
+    background-color: #ff85a1; /* Soft pink color */
+    color: white;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Hover effect for the button */
+#redirectButton:hover {
+    background-color: #ff3f5f; /* Darker pink on hover */
+    transform: scale(1.05);
+}
+
+/* Active effect when the button is clicked */
+#redirectButton:active {
+    background-color: #e5004f; /* Even darker pink when clicked */
+    transform: scale(1);
+}
+
+/* Style for the button when it's hidden */
+#redirectButton[style*="display: none"] {
+    display: none;
+}
+    

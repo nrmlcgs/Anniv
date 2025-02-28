@@ -1,0 +1,149 @@
+/* Reset default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Style */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+/* Envelope Container */
+.envelope-container {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+/* Heart Shaped Envelope */
+.heart-envelope {
+    width: 200px;
+    height: 200px;
+    position: relative;
+    background-color: #f3d9b1;
+    border-radius: 100%;
+    transform: rotate(45deg);
+    transition: transform 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.heart-envelope:hover {
+    transform: scale(1.1) rotate(45deg);
+}
+
+.heart-flap {
+    position: absolute;
+    top: -40px;
+    left: 40px;
+    width: 120px;
+    height: 60px;
+    background-color: #f3b68c;
+    border-radius: 50%;
+    z-index: 1;
+}
+
+/* Envelope Body with Heart */
+.heart-envelope-body {
+    width: 100%;
+    height: 100%;
+    background-color: #f3d9b1;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Letter Container */
+.letter {
+    width: 700px;
+    height: 400px;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 15px; /* Rounded corners for a soft look */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2); /* Stronger shadow for depth */
+    margin-top: 20px;
+    text-align: left;
+    font-size: 22px;
+    color: #333;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    background: linear-gradient(135deg, #f3d9b1, #ffafcc); /* Gradient background for some flair */
+    border: 3px solid #e5004f; /* Border around the letter with a nice color */
+}
+
+/* Heading Style */
+.letter h2 {
+    margin-bottom: 20px;
+    font-size: 32px;
+    color: #e5004f; /* A soft red color for the heading */
+    font-family: 'Georgia', serif; /* Elegant serif font */
+    text-align: center; /* Centered heading */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow for the heading */
+}
+
+/* Paragraph Styling */
+.letter p {
+    line-height: 1.8;
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-family: 'Times New Roman', Times, serif; /* Elegant serif font for paragraphs */
+    color: #555; /* Darker text for better readability */
+    text-align: justify; /* Justify the text for a cleaner look */
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Decorative Heart Icon */
+.letter:before {
+    content: "❤️"; /* Heart emoji */
+    font-size: 50px; /* Heart size */
+    position: absolute;
+    top: 40px; /* Adjust this value to move the heart closer to the letter container */
+    left: 50%;
+    transform: translateX(-50%); /* Centers the heart horizontally */
+    z-index: 1; /* Ensures the heart stays on top */
+    animation: heartBounce 1s ease infinite; /* Bouncing animation */
+}
+
+/* Heart Bounce Animation */
+@keyframes heartBounce {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.2); /* Slightly enlarged */
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
+
+
+/* Optional - Scroll Bar Styling */
+.letter::-webkit-scrollbar {
+    width: 8px;
+}
+
+.letter::-webkit-scrollbar-thumb {
+    background: #e5004f; /* Red color thumb */
+    border-radius: 10px;
+}
+
+.letter::-webkit-scrollbar-track {
+    background: #f3f3f3;
+}

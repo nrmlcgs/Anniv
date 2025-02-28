@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 1st Anniversary!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="pin-container">
+        <h2>Enter the Password</h2>
+        <div class="keypad">
+            <button class="key" onclick="addToPin(1)">1</button>
+            <button class="key" onclick="addToPin(2)">2</button>
+            <button class="key" onclick="addToPin(3)">3</button>
+            <button class="key" onclick="addToPin(4)">4</button>
+            <button class="key" onclick="addToPin(5)">5</button>
+            <button class="key" onclick="addToPin(6)">6</button>
+            <button class="key" onclick="addToPin(7)">7</button>
+            <button class="key" onclick="addToPin(8)">8</button>
+            <button class="key" onclick="addToPin(9)">9</button>
+            <button class="key" onclick="addToPin(0)">0</button>
+            <button class="key clear" onclick="clearPin()">Clear</button>
+            <button class="key enter" onclick="validatePin()">Enter</button>
+        </div>
+        <div id="pinDisplay" class="pin-display"></div>
+        <p id="errorMessage" class="error-message">Incorrect PIN. Try again.</p>
+    </div>
+
+    <div class="container" id="surpriseContainer" style="display: none;">
+        <h2>Complete the Puzzle!</h2>
+        <div class="puzzle-container" id="puzzleContainer">
+            <!-- Puzzle pieces will be generated here by JavaScript -->
+        </div>
+
+        <!-- Full puzzle image preview -->
+        <div id="puzzlePreview" style="position: absolute; top: 20px; right: 20px;">
+            <img src="us.jpg" alt="Full Puzzle Image" style="max-width: 200px; height: auto; border: 2px solid #ccc;">
+        </div>
+
+        <button id="resetButton" onclick="resetPuzzle()" style="display: none;">Reset Puzzle</button>
+
+        <!-- Button to redirect to the balloon game -->
+        <!-- "Go to Balloon Game" button -->
+    <button id="redirectButton" onclick="redirectToBalloonGame()">Click me if you arrange it completely</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

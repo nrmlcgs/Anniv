@@ -1,0 +1,87 @@
+/* Balloon Game Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #fef8f8;
+    text-align: center;
+    padding: 50px;
+}
+
+.game-container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #e5004f;
+}
+
+.balloon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.balloon {
+    width: 100px;
+    height: 150px;
+    background-color: #ff85a1;
+    border-radius: 50%;
+    margin: 10px;
+    cursor: pointer;
+    position: relative;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.balloon:hover {
+    transform: scale(1.1);
+}
+
+.balloon.pop {
+    transform: scale(0.2);
+    opacity: 0;
+}
+
+.balloon:active {
+    transform: scale(1.05);
+}
+
+/* Balloon messages */
+.message-container {
+    display: none;
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #e5004f;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+}
+
+/* Style for the clickable button with .akosipaga class */
+.akosipaga {
+    background: linear-gradient(45deg, #ff85a1, #e5004f); /* Gradient background */
+    color: white;
+    font-size: 10px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, background 0.3s ease;
+}
+
+.akosipaga:hover {
+    background: linear-gradient(45deg, #e5004f, #ff85a1); /* Reverse the gradient on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+.akosipaga:active {
+    transform: scale(0.98); /* Slightly shrink on click */
+}
